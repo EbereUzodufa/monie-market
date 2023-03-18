@@ -1,0 +1,63 @@
+:host {
+  .indicators {
+    @apply flex flex-wrap space-x-1;
+  }
+
+  .indicator {
+    @apply h-1 w-1 bg-gray-100 rounded-full;
+
+    &.active {
+      @apply bg-black w-4;
+    }
+  }
+
+  .category {
+    @apply flex flex-col justify-center items-center space-y-1 w-14;
+  }
+
+  .catgory-icon {
+    @apply text-black;
+  }
+
+  .slider {
+    @apply w-full relative overflow-hidden;
+    height: 310px;
+  }
+
+  .slide {
+    @apply absolute items-end top-0 right-0 bottom-0 h-full w-full transition ease-in-out duration-300 -translate-x-full hidden;
+
+    &.bg0 {
+      @apply bg-pink;
+    }
+
+    &.bg1 {
+      @apply bg-green;
+    }
+
+    &.bg2 {
+      @apply bg-[cadetblue];
+    }
+
+    &.active {
+      @apply translate-x-0 z-10 flex;
+      // background: cadetblue;
+    }
+
+    &.prev {
+      @apply -translate-x-full z-10 flex;
+    }
+
+    &.next {
+      @apply translate-x-full z-10 flex;
+    }
+  }
+
+  // .slide.active + .slide {
+  //   @apply translate-x-full;
+
+  //   &:first-child {
+  //     @apply z-10;
+  //   }
+  // }
+}

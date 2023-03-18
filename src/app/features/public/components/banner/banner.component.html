@@ -1,0 +1,74 @@
+<div class="w-full">
+  <div class="slider">
+    <div
+      *ngFor="let item of bannerList; let index = index"
+      class="w-full slide bg{{ index }}"
+      [ngClass]="{
+        prev: index === selectSlideIndex - 1,
+        active: index === selectSlideIndex,
+        next: index === selectSlideIndex + 1
+      }"
+    >
+      <div class="container mx-auto">
+        <div class="pt-24 pb-10 px-4">
+          <div class="w-full">
+            <div class="flex justify-between items-start">
+              <div class="flex-1 pr-4 space-y-6">
+                <div class="flex flex-col">
+                  <span class="text-xs font-bold uppercase"
+                    >#Fashion Day {{ index }}</span
+                  >
+                  <span class="text-2xl font-bold uppercase">80% OFF</span>
+                  <span class="text-xs max-w-[11rem]">
+                    Discover fashion that suits to your style
+                  </span>
+                </div>
+                <button (click)="selectSlide(index)" class="btn btn-primary">
+                  Check this out
+                </button>
+              </div>
+              <div class="flex flex-wrap">
+                <div class="indicators">
+                  <div
+                    *ngFor="let item of bannerList; let indicatorIndex = index"
+                    class="indicator"
+                    [class.active]="index === indicatorIndex"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-full bg-white">
+    <div class="container mx-auto">
+      <div class="flex flex-col pt-6 pb-3 px-4">
+        <div class="flex justify-between items-start pb-6">
+          <div
+            *ngFor="let category of categoryList; trackBy: trackByFn"
+            class="category"
+          >
+            <span
+              class="rounded-lg bg-gray-100 h-9 w-9 flex justify-center items-center"
+            >
+              <app-sdk-icon
+                [icon]="category.icon"
+                class="catgory-icon"
+              ></app-sdk-icon>
+            </span>
+            <span class="text-xs text-center">{{ category.title }}</span>
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <div class="indicators">
+            <div class="indicator active"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
