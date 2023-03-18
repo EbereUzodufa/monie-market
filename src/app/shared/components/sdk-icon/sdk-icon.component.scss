@@ -1,0 +1,15 @@
+:host {
+  @apply flex flex-wrap;
+
+  .mm-sdk-icon {
+    --iconDimension: 1.5rem;
+    width: var(--iconDimension);
+    height: var(--iconDimension);
+    font-size: var(--iconDimension);
+    color: inherit;
+  }
+
+  .filled {
+    font-variation-settings: "FILL" 100, "wght" 400, "GRAD" 0, "opsz" 48;
+  }
+}
