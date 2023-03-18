@@ -1,8 +1,8 @@
 :host {
   @apply flex flex-wrap;
+  --iconDimension: 1.5rem;
 
   .mm-sdk-icon {
-    --iconDimension: 1.5rem;
     width: var(--iconDimension);
     height: var(--iconDimension);
     font-size: var(--iconDimension);

@@ -22,6 +22,9 @@ module.exports = {
         DEFAULT: "#fff",
         smoke: "#ECEDEF",
       },
+      yellow: {
+        rating: "#F6B01E",
+      },
     },
   },
   plugins: [],
