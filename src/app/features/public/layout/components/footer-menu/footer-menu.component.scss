@@ -1,5 +1,5 @@
 :host {
-  @apply absolute bottom-0 right-0 left-0 z-50;
+  @apply fixed bottom-0 right-0 left-0 z-50;
   nav {
     @apply flex flex-wrap w-full  items-center p-4;
 

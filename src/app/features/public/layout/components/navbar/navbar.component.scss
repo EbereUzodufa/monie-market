@@ -1,4 +1,6 @@
 :host {
+  @apply fixed top-0 right-0 left-0 z-50;
+
   .input-search {
     @apply border border-solid border-gray-100 rounded-lg py-3 pr-3 pl-8 bg-transparent flex-1 w-full;
     background: url("/assets/icons/search.svg") no-repeat 0.5rem center/ 1.25rem;
