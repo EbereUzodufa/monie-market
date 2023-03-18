@@ -10,3 +10,11 @@
 body {
   @apply bg-white-smoke;
 }
+
+.btn {
+  @apply rounded-lg cursor-pointer transition ease-in-out duration-300 text-base leading-none;
+
+  &.btn-primary {
+    @apply w-fit bg-black border border-solid border-black text-white hover:text-black hover:bg-white p-4;
+  }
+}
