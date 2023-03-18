@@ -1,0 +1,20 @@
+:host {
+  .input-search {
+    @apply border border-solid border-gray-100 rounded-lg py-3 pr-3 pl-8 bg-transparent flex-1 w-full;
+    background: url("/assets/icons/search.svg") no-repeat 0.5rem center/ 1.25rem;
+  }
+
+  .icon-wrapper {
+    @apply relative flex flex-wrap h-9 w-9;
+  }
+
+  .nav-icon {
+    @apply text-gray my-auto;
+  }
+
+  nav {
+    @media screen and (max-width: 239px) {
+      @apply flex-col justify-end items-end;
+    }
+  }
+}
