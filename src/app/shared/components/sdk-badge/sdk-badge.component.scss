@@ -3,7 +3,7 @@
     @apply absolute top-0 right-0 rounded-[0.25rem] p-0.5 bg-pink text-white text-center;
 
     .badge-content {
-      @apply w-5 h-4 flex justify-center items-center text-xs leading-none font-medium;
+      @apply w-4 h-3 flex justify-center items-center text-[0.5rem] leading-none font-medium;
     }
   }
 }
