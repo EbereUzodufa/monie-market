@@ -1,0 +1,30 @@
+<nav class="w-full bg-white">
+  <div class="container mx-auto">
+    <div class="w-full flex justify-between flex-wrap items-center py-6 px-4">
+      <a routerLink="/" class="btn btn-menu">
+        <app-sdk-icon icon="arrow_back_ios" class="nav-icon"></app-sdk-icon>
+      </a>
+      <div class="min-w-fit py-1 pl-4">
+        <div class="flex justify-end">
+          <div class="flex flex-wrap space-x-3">
+            <button class="btn btn-menu">
+              <app-sdk-icon icon="favorite" class="nav-icon"></app-sdk-icon>
+            </button>
+            <button class="btn btn-menu">
+              <app-sdk-icon icon="share" class="nav-icon"></app-sdk-icon>
+            </button>
+            <button>
+              <div class="icon-wrapper">
+                <app-sdk-icon
+                  icon="shopping_bag"
+                  class="nav-icon"
+                ></app-sdk-icon>
+                <app-sdk-badge content="1"></app-sdk-badge>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

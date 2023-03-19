@@ -1,0 +1,33 @@
+:host {
+  .product-stat {
+    @apply w-full flex justify-between;
+  }
+
+  .product-features {
+  }
+
+  .progress-bar {
+    @apply flex-1 h-2 w-full rounded-lg bg-gray-200;
+
+    .progress {
+      @apply h-full rounded-lg bg-green w-1/2;
+    }
+  }
+
+  .rating-score {
+    --iconDimension: 1.25rem;
+  }
+
+  .helpful-icon {
+    --iconDimension: 1.25rem;
+  }
+
+  .reviews-img {
+    @apply aspect-square rounded-lg relative;
+  }
+
+  .filter-review {
+    @apply appearance-none p-3 border border-gray-200 bg-transparent rounded-lg w-32 text-sm leading-none font-medium text-black;
+    background: url("/assets/icons/dropdown.svg") no-repeat right 0.5rem center;
+  }
+}
