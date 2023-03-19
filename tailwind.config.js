@@ -15,13 +15,14 @@ module.exports = {
         DEFAULT: "#2a2d40",
         100: "#CDD0D4",
         200: "#BFC0C5",
+        300: "#DCDDDE",
       },
       pink: {
         DEFAULT: "#E55986",
       },
       white: {
         DEFAULT: "#fff",
-        smoke: "#f5f5f5",
+        smoke: "#FAFAFA",
       },
       yellow: {
         rating: "#F6B01E",
