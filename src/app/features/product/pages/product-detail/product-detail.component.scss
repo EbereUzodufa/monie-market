@@ -1,33 +1,45 @@
-:host {
-  .product-stat {
-    @apply w-full flex justify-between;
+.nav-tab-button {
+  @apply py-1 px-2 text-gray-200 border-b border-gray-200;
+
+  &.selected {
+    @apply text-green border-green;
+  }
+}
+
+article {
+  @apply border-b border-solid border-gray-200 py-6;
+
+  header {
+    @apply mb-4;
   }
 
-  .product-features {
+  h2 {
+    @apply text-base text-black font-semibold;
+    letter-spacing: -0.5px;
   }
 
-  .progress-bar {
-    @apply flex-1 h-2 w-full rounded-lg bg-gray-200;
-
-    .progress {
-      @apply h-full rounded-lg bg-green w-1/2;
-    }
+  .key-title {
+    @apply text-sm text-gray-200 pr-1 capitalize;
   }
+}
 
-  .rating-score {
-    --iconDimension: 1.25rem;
-  }
+.product-stat {
+  @apply w-full flex justify-between;
+}
 
-  .helpful-icon {
-    --iconDimension: 1.25rem;
-  }
+.progress-bar {
+  @apply flex-1 h-2 w-full rounded-lg bg-gray-200;
 
-  .reviews-img {
-    @apply aspect-square rounded-lg relative;
+  .progress {
+    @apply h-full rounded-lg bg-green;
+    width: calc(100% * var(--progress-value));
   }
+}
 
-  .filter-review {
-    @apply appearance-none p-3 border border-gray-200 bg-transparent rounded-lg w-32 text-sm leading-none font-medium text-black;
-    background: url("/assets/icons/dropdown.svg") no-repeat right 0.5rem center;
-  }
+.rating-score {
+  --iconDimension: 1.25rem;
+}
+
+.helpful-icon {
+  --iconDimension: 1.25rem;
 }

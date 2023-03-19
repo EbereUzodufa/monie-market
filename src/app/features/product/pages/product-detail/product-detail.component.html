@@ -1,323 +1,83 @@
-<app-product-detail-navbar></app-product-detail-navbar>
-<div class="w-full pt-[5.7rem]">
-  <app-product-img-overview></app-product-img-overview>
-  <section class="w-full pb-24">
-    <div class="container mx-auto">
-      <div class="p-4">
-        <div class="flex flex-col">
-          <a
-            href=""
-            target="_blank"
-            class="product-store flex justify-start items-center space-x-2 text-gray-200"
-          >
-            <app-sdk-icon icon="storefront"></app-sdk-icon>
-            <span>tokobaju.id</span>
-          </a>
-          <p class="product-name">
-            Essentials Men's short sleeve crewneck T-shirt shjjsh hshj s
-          </p>
-          <div class="flex justify-between pt-2">
-            <ul class="product-stat">
-              <li class="flex flex-wrap">
-                <div class="flex flex-wrap items-center justify-start">
-                  <app-sdk-icon
-                    class="product-rating rating-score"
-                    icon="star"
-                    [isFilled]="true"
-                  ></app-sdk-icon>
-                  <span class="pl-1 text-gray-200"> 4.9 Ratings</span>
-                </div>
-              </li>
-              <li class="flex flex-wrap">
-                <span class="pl-1 text-gray-200"> 2.3K+ Reviews</span>
-              </li>
-              <li class="flex flex-wrap">
-                <div class="flex flex-wrap items-center justify-start">
-                  <span class="pl-1 text-gray-200"> 2.9k + Sold</span>
-                </div>
-              </li>
-            </ul>
-          </div>
+<ng-container *ngIf="product$ | async as product">
+  <app-product-detail-navbar></app-product-detail-navbar>
+  <div class="w-full pt-[5.7rem]">
+    <app-product-img-overview></app-product-img-overview>
+    <section class="w-full pb-24">
+      <div class="container mx-auto">
+        <div class="p-4">
           <div class="w-full">
-            <div class="product-features">
-              <span class="flex items-center space-x-1">
-                <span class="text-sm text-gray-200">Brand:</span>
-                <span class="text-base text-black font-medium">ChArmkpR</span>
-              </span>
-            </div>
-            <article>
-              <header>
-                <h2>Description</h2>
-              </header>
-              <ul class="list-disc pl-5">
-                <li class="text-gray-200 text-sm">
-                  Long-sleeve dress shirt in classic fit featuring button-down
-                  collar
-                </li>
-                <span
-                  >Chat us if there is anything you need to ask about the
-                  product :)
-                </span>
-                <div class="w-full">
-                  <button class="btn btn-flat">
-                    <span class="flex flex-wrap items-center space-x-1">
-                      <span class="text-green">See less</span>
-                      <app-sdk-icon
-                        class="text-gray-200"
-                        icon="expand_less"
-                      ></app-sdk-icon>
-                    </span>
-                  </button>
-                </div>
-              </ul>
-            </article>
-            <article>
-              <header>
-                <h2>Shippings Information:</h2>
-              </header>
-              <div class="product-shipping">
-                <span class="flex items-center space-x-1">
-                  <span class="text-sm text-gray-200">Delivery:</span>
-                  <span class="text-base text-black font-medium"
-                    >Shipping from Jakarta, Indonesia</span
-                  >
-                </span>
-              </div>
-            </article>
-            <article>
-              <header>
-                <h2>Seller Information:</h2>
-              </header>
-              <div class="flex items-start">
-                <div
-                  class="rounded-full relative p-1 h-24 w-24 bg-gray-200 mr-4"
-                >
-                  <div
-                    class="absolute rounded-full bottom-2 right-2 h-4 w-4 border-2 border-white bg-gray-200"
-                  ></div>
-                </div>
-                <span class="flex-1">
-                  <div class="flex flex-col">
-                    <span class="text-xl text-black font-medium mb-2"
-                      >Thrifting_Store</span
-                    >
-                    <span
-                      class="text-xs flex flex-wrap items-center justify-start"
-                    >
-                      <span class="pr-1">Active 5 Min ago</span>
-                      <span class="border-l border-solid border-gray-200 pl-1">
-                        96.7% Positive Feedback
-                      </span>
-                    </span>
-                    <div class="w-full mt-4">
-                      <button class="btn btn-outline-secondary">
-                        <span class="flex w-full items-center px-1">
-                          <app-sdk-icon
-                            class="mr-2"
-                            icon="storefront"
-                          ></app-sdk-icon>
-                          <span class="font-medium leading-none"
-                            >View store</span
-                          >
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                </span>
-              </div>
-            </article>
-            <article>
-              <header>
-                <h2>Reviews & Ratings</h2>
-              </header>
-              <div class="flex w-full">
-                <div class="flex flex-col h-full pr-5">
-                  <div class="flex flex-row items-end">
-                    <span class="text-4xl leading-none font-semibold">4.9</span>
-                    <span class="text-sm leading-none pl-2 text-gray-200"
-                      >/ 5.0</span
-                    >
-                  </div>
-                  <span class="flex flex-wrap">
-                    <app-sdk-icon
-                      class="product-rating rating-score"
-                      icon="star"
-                      [isFilled]="true"
-                    ></app-sdk-icon>
-                  </span>
-                  <span class="text-sm text-gray-200">2.3k+ Reviews</span>
-                </div>
-                <div class="flex-1">
-                  <div class="flex flex-col space-y-1">
-                    <div class="flex justify-start items-center space-x-1.5">
+            <div class="flex flex-col space-y-3 pb-3">
+              <a
+                href=""
+                target="_blank"
+                class="product-store flex justify-start items-center space-x-2 text-gray-200"
+              >
+                <app-sdk-icon icon="storefront"></app-sdk-icon>
+                <span>{{ product.store.username }}</span>
+              </a>
+              <p class="text-xl font-semibold capitalize text-black pt-3">
+                {{ product.name }}
+              </p>
+              <div class="flex justify-between">
+                <ul class="product-stat">
+                  <li class="flex flex-wrap">
+                    <div class="flex flex-wrap items-center justify-start">
                       <app-sdk-icon
                         class="product-rating rating-score"
                         icon="star"
                         [isFilled]="true"
                       ></app-sdk-icon>
-                      <span class="text-sm leading-none text-gray-200">5</span>
-                      <span class="progress-bar">
-                        <div class="progress"></div>
-                      </span>
-                      <span class="font-medium leading-none">1.5k</span>
-                    </div>
-                    <div
-                      class="flex justify-start items-center space-x-1.5 leading-none"
-                    >
-                      <app-sdk-icon
-                        class="product-rating rating-score"
-                        icon="star"
-                        [isFilled]="true"
-                      ></app-sdk-icon>
-                      <span class="text-sm leading-none text-gray-200">5</span>
-
-                      <span class="progress-bar">
-                        <div class="progress"></div>
-                      </span>
-                      <span class="font-medium leading-none">1.5k</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="w-full">
-                <div class="flex flex-col">
-                  <header>
-                    <h2>Reviews with images & videos</h2>
-                  </header>
-                  <div class="w-full flex justify-between space-x-4">
-                    <div class="">
-                      <img
-                        class="reviews-img"
-                        src="https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg"
-                        alt="product.name"
-                      />
-                    </div>
-                    <div class="">
-                      <img
-                        class="reviews-img"
-                        src="https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg"
-                        alt="product.name"
-                      />
-                    </div>
-                    <div class="">
-                      <img
-                        class="reviews-img"
-                        src="https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg"
-                        alt="product.name"
-                      />
-                    </div>
-                    <div class="">
-                      <img
-                        class="reviews-img"
-                        src="https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg"
-                        alt="product.name"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article>
-              <header class="flex justify-between items-end">
-                <div>
-                  <h2>Top Reviews</h2>
-                  <span class="text-sm text-gray-200"
-                    >Showing 3 of 2.3k+ reviews</span
-                  >
-                </div>
-                <select class="filter-review">
-                  <option selected value="Popular">Popular</option>
-                </select>
-              </header>
-              <div class="top-reviewers">
-                <div class="top-reviewer flex flex-col">
-                  <div class="flex justify-between items-center">
-                    <div class="flex flex-wrap items-center">
-                      <img
-                        class="reviewer-img w-4 aspect-square object-cover object-top mr-3 rounded-full"
-                        src="https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg"
-                        alt="image of a reviewer"
-                      />
-                      <span>Levi A***man</span>
-                    </div>
-                    <div class="flex flex-wrap items-center">
-                      <span class="flex flex-wrap items-center mr-3">
-                        <app-sdk-icon
-                          class="product-rating rating-score"
-                          icon="star"
-                          [isFilled]="true"
-                        ></app-sdk-icon>
-                        <span class="font-semibold text-sm leading-none"
-                          >5.0</span
-                        >
-                      </span>
-                      <button class="btn btn-menu">
-                        <app-sdk-icon class="" icon="more_horiz"></app-sdk-icon>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="flex w-full">
-                    <div class="w-full">
-                      <div class="w-full flex flex-wrap max-w-full">
-                        <div
-                          *ngFor="let summary of reviewSummary"
-                          class="rounded-2xl border border-green p-2 text-[0.55rem] leading-none font-bold text-green bg-green bg-opacity-5 my-1 whitespace-nowrap mr-1"
-                        >
-                          {{ summary }}
-                        </div>
-                      </div>
-                      <p>
-                        According to my oxpectationa. Thia la the beat.
-                        <br />Thank you
-                      </p>
-                    </div>
-                  </div>
-                  <div class="flex justify-between items-center">
-                    <button class="btn btn-flat-secondary my-1 mr-2">
-                      <span
-                        class="flex flex-wrap items-center space-x-2 whitespace-nowrap py-1"
+                      <span class="pl-1 text-gray-200">
+                        {{ product.reviews.averageRating }} Ratings</span
                       >
-                        <app-sdk-icon
-                          [isFilled]="true"
-                          class="helpful-icon"
-                          icon="thumb_up"
-                        ></app-sdk-icon>
-                        <span>Helpful ?</span>
-                      </span>
-                    </button>
-                    <span class="text-sm text-gray-200 my-1">Yesterdays</span>
-                  </div>
-                </div>
+                    </div>
+                  </li>
+                  <li class="flex flex-wrap">
+                    <span class="pl-1 text-gray-200">
+                      {{ product.reviews.totalReviews | countFormatter }}
+                      Reviews</span
+                    >
+                  </li>
+                  <li class="flex flex-wrap">
+                    <div class="flex flex-wrap items-center justify-start">
+                      <span class="pl-1 text-gray-200">
+                        {{ product.totalSold | countFormatter }} Sold</span
+                      >
+                    </div>
+                  </li>
+                </ul>
               </div>
-              <div class="flex justify-between items-center">
-                <div class="flex flex-wrap items-center space-x-2">
-                  <button class="btn btn-menu btn-circle btn-raised" disabled>
-                    <app-sdk-icon icon="chevron_left"></app-sdk-icon>
-                  </button>
-                  <span>1</span>
-                  <span>2</span>
-                  <span>3</span>
-                  <span>....</span>
-                  <button class="btn btn-menu btn-circle btn-raised">
-                    <app-sdk-icon icon="chevron_right"></app-sdk-icon>
-                  </button>
-                </div>
-                <div class="flex-1 py-1 pl-2">
-                  <div class="flex justify-end">
-                    <button class="btn btn-flat">
-                      <span class="text-green text-sm font-semibold">
-                        See more
-                      </span>
-                    </button>
-                  </div>
-                </div>
+            </div>
+            <div class="w-full">
+              <div class="flex flex-row relative w-full">
+                <button class="nav-tab-button selected w-2/5">About</button>
+                <button class="nav-tab-button flex-1">Reviews</button>
+                <div
+                  class="w-2/5 rounded-sm h-0.5 absolute -bottom-[0.5px] left-0 z-10 bg-green"
+                ></div>
               </div>
-            </article>
+            </div>
+            <app-product-features
+              [features]="product.features"
+            ></app-product-features>
+            <app-product-description
+              [description]="product.description"
+            ></app-product-description>
+            <app-product-shipping-info
+              [shippingInfo]="product.shippingInfo"
+            ></app-product-shipping-info>
+            <app-product-seller-info
+              [store]="product.store"
+              [sellerInfo]="product.sellerInfo"
+            ></app-product-seller-info>
+            <app-product-review
+              [reviews]="product.reviews"
+            ></app-product-review>
           </div>
         </div>
       </div>
-    </div>
-    <app-product-list [display]="'horizontal'"></app-product-list>
-  </section>
+      <app-product-list [display]="'horizontal'"></app-product-list>
+    </section>
+  </div>
   <app-cart-overview></app-cart-overview>
-</div>
+</ng-container>

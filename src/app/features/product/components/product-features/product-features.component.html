@@ -1,0 +1,32 @@
+<article>
+  <div class="product-features">
+    <ng-container *ngIf="features | keyvalue : originalOrder as featuresList">
+      <div *ngIf="featuresList | slice : 0 : featuresList.length / 2 as list">
+        <ng-container
+          [ngTemplateOutlet]="contentTemplate"
+          [ngTemplateOutletContext]="{
+            $implicit: list
+          }"
+        ></ng-container>
+      </div>
+      <div *ngIf="featuresList | slice : featuresList.length / 2 as list">
+        <ng-container
+          [ngTemplateOutlet]="contentTemplate"
+          [ngTemplateOutletContext]="{
+            $implicit: list
+          }"
+        ></ng-container>
+      </div>
+    </ng-container>
+  </div>
+</article>
+
+<ng-template #contentTemplate let-content>
+  <span
+    *ngFor="let feature of content; trackBy: trackByFn"
+    class="flex items-center space-x-1"
+  >
+    <span class="key-title">{{ feature.key }}:</span>
+    <span class="text-sm text-black font-medium">{{ feature.value }}</span>
+  </span>
+</ng-template>

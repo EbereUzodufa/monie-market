@@ -1,0 +1,182 @@
+<article>
+  <header>
+    <h2>Reviews & Ratings</h2>
+  </header>
+  <div class="flex w-full pb-6">
+    <div class="flex flex-col h-auto pt-3 pr-5">
+      <div class="flex flex-row items-end">
+        <span class="text-4xl leading-none font-semibold">{{
+          reviews.averageRating
+        }}</span>
+        <span class="text-sm leading-none pl-2 text-gray-200">/ 5.0</span>
+      </div>
+      <span class="flex flex-wrap pt-4">
+        <app-product-rating
+          class="product-rating rating-score"
+          [rating]="reviews.averageRating"
+        ></app-product-rating>
+      </span>
+      <span class="text-sm text-gray-200 pt-4 mt-auto mb-0"
+        >{{ reviews.totalReviews | countFormatter }} Reviews</span
+      >
+    </div>
+    <div class="flex-1">
+      <div class="flex flex-col space-y-1">
+        <div
+          *ngFor="
+            let item of reviews.ratings | keyvalue : sortRating;
+            trackBy: trackByFn
+          "
+          class="flex justify-start items-center space-x-1.5"
+        >
+          <app-sdk-icon
+            class="product-rating rating-score"
+            icon="star"
+            [isFilled]="true"
+          ></app-sdk-icon>
+          <span class="text-sm leading-none text-gray-200">{{ item.key }}</span>
+          <span
+            class="progress-bar"
+            style="--progress-value: {{ item.value.percentage }}"
+          >
+            <div class="progress"></div>
+          </span>
+          <span class="font-medium leading-none w-8">{{
+            item.value.count | countFormatter
+          }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-full">
+    <div class="flex flex-col">
+      <header>
+        <h2>Reviews with images & videos</h2>
+      </header>
+      <div
+        class="flex flex-wrap w-full"
+        *ngIf="reviews.imageReview as imageReview"
+      >
+        <div class="w-full flex justify-between space-x-4">
+          <div
+            *ngFor="
+              let reviewer of imageReview.url;
+              let index = index;
+              trackBy: trackByFn
+            "
+            class="relative"
+          >
+            <img
+              class="reviews-img"
+              src="https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg"
+              alt="name"
+            />
+            <span
+              *ngIf="index + 1 === imageReview.url.length"
+              class="no-of-more-reviews"
+            >
+              {{ imageReview.remaining }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="border-b-0">
+  <header class="flex justify-between items-end">
+    <div>
+      <h2>Top Reviews</h2>
+      <span class="text-sm text-gray-200"
+        >Showing 3 of {{ reviews.totalReviews | countFormatter }} reviews</span
+      >
+    </div>
+    <select class="filter-review">
+      <option selected value="Popular">Popular</option>
+    </select>
+  </header>
+  <div class="top-reviewers" *ngIf="reviews.topUserReviews as reviewers">
+    <div
+      *ngFor="let reviewer of reviewers; trackBy: trackByFn"
+      class="flex flex-col py-4 border-b border-gray-200"
+    >
+      <div class="flex justify-between items-center">
+        <div class="flex flex-wrap items-center">
+          <img
+            class="reviewer-img w-5 aspect-square object-cover object-top mr-3 rounded-full"
+            [src]="reviewer.imgUrl"
+            alt="image of a reviewer"
+          />
+          <span appSuptextMaskedCharacters class="text-xs font-medium">{{
+            reviewer.name
+          }}</span>
+        </div>
+        <div class="flex flex-wrap items-center">
+          <span class="flex flex-wrap items-center mr-3">
+            <app-sdk-icon
+              class="product-rating rating-score"
+              icon="star"
+              [isFilled]="true"
+            ></app-sdk-icon>
+            <span class="font-semibold text-sm leading-none">5.0</span>
+          </span>
+          <button class="btn btn-menu">
+            <app-sdk-icon class="" icon="more_horiz"></app-sdk-icon>
+          </button>
+        </div>
+      </div>
+      <div class="w-full py-3 space-y-3">
+        <div class="w-full">
+          <div class="w-full flex flex-wrap max-w-full">
+            <div
+              *ngFor="let summary of reviewer.tags"
+              class="rounded-2xl border border-green p-2 text-[0.55rem] leading-none font-bold text-green bg-green bg-opacity-5 my-1 whitespace-nowrap mr-1"
+            >
+              {{ summary }}
+            </div>
+          </div>
+        </div>
+        <p class="text-sm">
+          According to my expectations. This is the best.
+          <br />Thank you
+        </p>
+      </div>
+      <div class="flex justify-between items-center">
+        <button class="btn btn-flat-secondary my-1 mr-2">
+          <span
+            class="flex flex-wrap items-center space-x-2 whitespace-nowrap py-1"
+          >
+            <app-sdk-icon
+              [isFilled]="true"
+              class="helpful-icon"
+              icon="thumb_up"
+            ></app-sdk-icon>
+            <span>Helpful ?</span>
+          </span>
+        </button>
+        <span class="text-sm text-gray-200 my-1">Yesterdays</span>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-between items-center pt-3">
+    <div class="flex flex-wrap items-center space-x-2 py-1">
+      <button class="btn btn-menu btn-circle btn-raised" disabled>
+        <app-sdk-icon icon="chevron_left"></app-sdk-icon>
+      </button>
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+      <span>....</span>
+      <button class="btn btn-menu btn-circle btn-raised">
+        <app-sdk-icon icon="chevron_right"></app-sdk-icon>
+      </button>
+    </div>
+    <div class="flex-1 py-1 pl-2">
+      <div class="flex justify-end">
+        <button class="btn btn-flat">
+          <span class="text-green text-sm font-semibold"> See more </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
