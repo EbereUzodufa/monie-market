@@ -3,8 +3,8 @@
     --iconDimension: 1.25rem;
   }
 
-  .product-card:hover,
-  .product-card:focus {
+  a:hover,
+  a:focus {
     footer {
       @apply bg-white;
     }

@@ -1,0 +1,19 @@
+<span class="flex flex-wrap">
+  <ng-container *ngFor="let rating of ratingScoreCard">
+    <ng-container [ngSwitch]="rating">
+      <ng-container *ngSwitchCase="'full'">
+        <app-sdk-icon
+          class="product-rating"
+          [isFilled]="true"
+          icon="star"
+        ></app-sdk-icon>
+      </ng-container>
+      <ng-container *ngSwitchCase="'half'">
+        <app-sdk-icon class="product-rating" icon="star_half"></app-sdk-icon>
+      </ng-container>
+      <ng-container *ngSwitchDefault>
+        <app-sdk-icon class="product-rating" icon="star"></app-sdk-icon>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+</span>

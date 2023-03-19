@@ -7,6 +7,7 @@ import { ProductCardComponent } from './components/products/product-card/product
 import { ProductListComponent } from './components/products/product-list/product-list.component';
 import { SuptextMaskedCharactersDirective } from './directives/suptext-masked-characters.directive';
 import { ProductRatingComponent } from './components/products/product-rating/product-rating.component';
+import { ExternalLinksDirective } from './directives/external-links.directive';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ProductRatingComponent } from './components/products/product-rating/pro
     ProductListComponent,
     SuptextMaskedCharactersDirective,
     ProductRatingComponent,
+    ExternalLinksDirective,
   ],
   imports: [CommonModule, RouterModule],
   exports: [SdkIconComponent, SdkBadgeComponent, ProductListComponent, SuptextMaskedCharactersDirective, ProductRatingComponent],
