@@ -1,3 +1,4 @@
+import { APP_ROUTES } from './../../../../app.routes';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -7,4 +8,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ProductCardComponent {
   @Input() isEven = false;
+  readonly productRoute = `/${APP_ROUTES.Product}`;
 }
