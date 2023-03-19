@@ -8,6 +8,8 @@
         active: index === selectSlideIndex,
         next: index === selectSlideIndex + 1
       }"
+      (swipeleft)="swipeLeft($event)"
+      (swiperight)="swipeRight($event)"
     >
       <div class="container mx-auto">
         <div class="pt-24 pb-10 px-4">
@@ -23,7 +25,10 @@
                     Discover fashion that suits to your style
                   </span>
                 </div>
-                <button (click)="selectSlide(index)" class="btn btn-primary">
+                <button
+                  class="btn btn-primary"
+                  [tabIndex]="index === selectSlideIndex ? 0 : -1"
+                >
                   Check this out
                 </button>
               </div>
@@ -46,7 +51,7 @@
     <div class="container mx-auto">
       <div class="flex flex-col pt-6 pb-3 px-4">
         <div class="flex justify-between items-start pb-6">
-          <div
+          <button
             *ngFor="let category of categoryList; trackBy: trackByFn"
             class="category"
           >
@@ -59,7 +64,7 @@
               ></app-sdk-icon>
             </span>
             <span class="text-xs text-center">{{ category.title }}</span>
-          </div>
+          </button>
         </div>
         <div class="flex justify-center">
           <div class="indicators">
