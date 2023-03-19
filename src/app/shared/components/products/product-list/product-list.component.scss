@@ -1,0 +1,32 @@
+:host {
+  $productGap: 2rem;
+
+  .vertical-display-section {
+    @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4;
+    gap: $productGap;
+
+    .product-item {
+      /**
+        * @TODO: Make max with
+      */
+    }
+  }
+
+  .horizontal-display-section {
+    @apply flex flex-row overflow-y-hidden overflow-x-auto;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .product-item {
+      min-width: calc(50% - ($productGap / 2));
+      max-width: calc(50% - ($productGap / 2));
+    }
+
+    .product-item:not(:last-child) {
+      margin-right: $productGap;
+    }
+  }
+}

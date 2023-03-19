@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProductListComponent {
   @Input() productList = Array(8).fill(0);
+  @Input() display: 'horizontal' | 'vertical' = 'vertical';
 
   trackByFn(index: number) {
     return index;
