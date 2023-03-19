@@ -21,7 +21,7 @@ module.exports = {
       },
       white: {
         DEFAULT: "#fff",
-        smoke: "#fafafa",
+        smoke: "#f5f5f5",
       },
       yellow: {
         rating: "#F6B01E",
