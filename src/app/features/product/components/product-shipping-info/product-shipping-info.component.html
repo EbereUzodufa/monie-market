@@ -1,0 +1,26 @@
+<article>
+  <header>
+    <h2>Shippings Information:</h2>
+  </header>
+  <div class="flex flex-col space-y-3" *ngIf="shippingInfo">
+    <span class="flex items-center space-x-1">
+      <span class="key-title">Delivery:</span>
+      <span class="text-sm text-black font-semibold">{{
+        shippingInfo.delivery
+      }}</span>
+    </span>
+    <span class="flex items-center space-x-1">
+      <span class="key-title">Shipping:</span>
+      <span class="text-sm text-black font-semibold">{{
+        shippingInfo.shipping
+      }}</span>
+    </span>
+    <span class="flex items-center space-x-1">
+      <span class="key-title">Arrive:</span>
+      <span class="text-sm text-black font-semibold"
+        >Estimated arrival on
+        {{ shippingInfo.arrivalDuration | shippingArrival }}</span
+      >
+    </span>
+  </div>
+</article>

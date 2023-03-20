@@ -1,0 +1,41 @@
+:host {
+  .product-favorite {
+    --iconDimension: 1.25rem;
+  }
+
+  .product-card {
+    &:hover,
+    &:focus,
+    &:focus-within,
+    &:focus-visible {
+      footer {
+        @apply bg-white;
+        box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.02);
+      }
+    }
+  }
+
+  .product-img {
+    @apply w-full object-cover object-top  bg-gradient-to-t from-[#F8F8F8] to-gray-100;
+    aspect-ratio: 37 / 26;
+  }
+
+  .product-category {
+    @apply text-left capitalize text-xs  text-gray-100;
+  }
+
+  .product-name {
+    @apply capitalize text-xs text-left font-semibold h-8 overflow-hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .product-rating {
+    --iconDimension: 1rem;
+  }
+
+  .product-price {
+    @apply text-green text-base;
+  }
+}

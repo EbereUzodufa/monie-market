@@ -1,0 +1,6 @@
+:host {
+  .product-selected-image {
+    @apply w-full rounded-lg object-cover object-top;
+    aspect-ratio: 68/64;
+  }
+}

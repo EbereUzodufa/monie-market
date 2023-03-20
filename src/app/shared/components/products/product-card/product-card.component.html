@@ -1,0 +1,49 @@
+<div *ngIf="product">
+  <button class="product-card" [routerLink]="[productRoute, product.id]">
+    <div class="relative">
+      <picture>
+        <source [srcset]="product.mainImgUrl.webp" />
+        <img
+          class="product-img"
+          appLazyLoadImage
+          [ngClass]="{ 'rounded-tl-lg': isEven }"
+          [src]="product.mainImgUrl.fallback"
+          [alt]="product.name"
+          loading="lazy"
+        />
+      </picture>
+
+      <div
+        class="absolute top-0 right-0 flex flex-wrap z-30"
+        (click)="toggleFavorite($event)"
+      >
+        <button class="p-1 bg-white bg-opacity-25 z-10">
+          <app-sdk-icon
+            [ngClass]="{ 'text-pink': product.isFavorite }"
+            [isFilled]="product.isFavorite"
+            class="product-favorite text-pink"
+            icon="favorite"
+          ></app-sdk-icon>
+        </button>
+      </div>
+    </div>
+    <footer class="flex flex-col p-2">
+      <p class="product-category compact-text">{{ product.category }}</p>
+      <p class="product-name">{{ product.name }}</p>
+      <div class="flex justify-between pt-2">
+        <span class="flex flex-wrap items-center text-gray-200 text-xs">
+          <app-sdk-icon
+            class="product-rating"
+            icon="star"
+            [isFilled]="true"
+          ></app-sdk-icon>
+          <span class="px-1 mr-1 border-r border-gray-200">
+            {{ product.reviews.averageRating }}
+          </span>
+          <span>{{ product.reviews.totalReviews }}</span>
+        </span>
+        <span class="product-price">{{ 32 | currency }}</span>
+      </div>
+    </footer>
+  </button>
+</div>

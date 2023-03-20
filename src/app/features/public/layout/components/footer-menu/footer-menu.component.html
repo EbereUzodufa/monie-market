@@ -1,0 +1,20 @@
+<div class="w-full bg-white">
+  <div class="container mx-auto">
+    <nav>
+      <div
+        *ngFor="let navItem of navList; let i = index; trackBy: trackByFn"
+        class="nav-item"
+        [class.selected]="i === selectedIndex"
+      >
+        <div class="flex flex-col">
+          <app-sdk-icon
+            [icon]="navItem.icon"
+            [isFilled]="i === selectedIndex"
+            class="nav-icon"
+          ></app-sdk-icon>
+          <span class="nav-item-text">{{ navItem.title }}</span>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>

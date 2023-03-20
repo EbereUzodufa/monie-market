@@ -1,0 +1,34 @@
+<div *ngIf="product" class="w-full">
+  <div class="container mx-auto">
+    <div class="px-4">
+      <div class="w-full bg-gray-100 rounded-lg">
+        <div class="flex-1 relative">
+          <div
+            class="absolute top-0 left-0 flex flex-wrap flex-col p-4 space-y-4"
+          >
+            <button *ngFor="let item of product.otherImgsUrl" class="h-9 w-9">
+              <picture>
+                <source [srcset]="item.webp" />
+                <img
+                  appLazyLoadImage
+                  class="w-full h-full rounded-lg object-cover object-top shadow-sm"
+                  [src]="item.fallback"
+                  alt="product image"
+                />
+              </picture>
+            </button>
+          </div>
+          <picture>
+            <source [srcset]="product.mainImgUrl.webp" />
+            <img
+              appLazyLoadImage
+              class="product-selected-image"
+              [src]="product.mainImgUrl.fallback"
+              alt="image of product {{ product.name }}"
+            />
+          </picture>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

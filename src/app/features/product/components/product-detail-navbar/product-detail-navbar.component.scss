@@ -1,0 +1,7 @@
+:host {
+  @apply fixed top-0 right-0 left-0 z-50;
+
+  .icon-wrapper {
+    @apply relative flex flex-wrap w-8;
+  }
+}

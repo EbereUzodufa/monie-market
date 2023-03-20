@@ -1,0 +1,53 @@
+:host {
+  .indicators {
+    @apply flex flex-wrap space-x-1;
+  }
+
+  .indicator {
+    @apply h-1 w-1 bg-gray-100 rounded-full;
+
+    &.active {
+      @apply bg-black w-4;
+    }
+  }
+
+  .category-section {
+    @apply w-full bg-white;
+    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.02);
+  }
+
+  .category {
+    @apply flex flex-col justify-center items-center space-y-1 w-14;
+  }
+
+  .catgory-icon {
+    @apply text-black;
+  }
+
+  .slider {
+    @apply w-full relative overflow-hidden;
+    height: 310px;
+  }
+
+  .slide {
+    @apply absolute items-end top-0 right-0 bottom-0 h-full w-full transition ease-in-out duration-300 -translate-x-full hidden;
+
+    &.active {
+      @apply translate-x-0 z-10 flex;
+      // background: cadetblue;
+    }
+
+    &.prev {
+      @apply -translate-x-full z-10 flex;
+    }
+
+    &.next {
+      @apply translate-x-full z-10 flex;
+    }
+  }
+
+  .slide-img {
+    @apply absolute top-0 left-0 w-full h-full object-cover object-left-bottom shadow-sm -z-[1];
+    aspect-ratio: 68/54;
+  }
+}

@@ -1,0 +1,6 @@
+<app-banner></app-banner>
+<app-product-list
+  *ngIf="products$ | async as products"
+  title="Best Sale Product"
+  [productList]="products"
+></app-product-list>

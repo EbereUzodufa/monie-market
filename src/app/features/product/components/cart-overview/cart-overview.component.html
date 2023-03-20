@@ -1,0 +1,29 @@
+<div class="w-full bg-white">
+  <div class="container mx-auto">
+    <div class="p-4">
+      <div class="flex flex-wrap justify-between items-end">
+        <div class="flex flex-col pr-4">
+          <span class="text-gray-200 text-sm leading-none">Total Price</span>
+          <span class="text-green text-xl">{{ 18 | currency }}</span>
+        </div>
+        <div class="flex flex-wrap min-w-fit text-white text-base leading-none">
+          <div class="h-auto">
+            <button class="p-4 h-full bg-green rounded-l-lg">
+              <span
+                class="flex flex-wrap justify-center items-center space-x-1"
+              >
+                <app-sdk-icon [icon]="'shopping_bag'"></app-sdk-icon>
+                <span class="">1</span>
+              </span>
+            </button>
+          </div>
+          <div class="h-auto">
+            <button class="p-4 h-full bg-gray rounded-r-lg">
+              <span class="flex h-full items-center px-3">Buy Now</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
