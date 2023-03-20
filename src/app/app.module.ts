@@ -10,8 +10,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import * as Hammer from 'hammerjs';
+import { Injectable } from '@angular/core';
 
-export class MyHammerConfig extends HammerGestureConfig {
+@Injectable()
+export class HammerConfig extends HammerGestureConfig {
   override = <any>{
     swipe: { direction: Hammer.DIRECTION_HORIZONTAL },
   };
@@ -28,7 +30,7 @@ export class MyHammerConfig extends HammerGestureConfig {
   providers: [
     {
       provide: HAMMER_GESTURE_CONFIG,
-      useClass: MyHammerConfig,
+      useClass: HammerConfig,
     },
   ],
   bootstrap: [AppComponent],
