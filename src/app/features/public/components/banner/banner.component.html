@@ -4,10 +4,14 @@
       *ngFor="let item of bannerList; let index = index"
       class="w-full slide bg{{ index }}"
       [ngClass]="{
-        prev: index === selectSlideIndex - 1,
+        prev:
+          index === selectSlideIndex - 1 ||
+          (index === 0 && selectSlideIndex + 1 === bannerList.length),
         active: index === selectSlideIndex,
         next: index === selectSlideIndex + 1
       }"
+      (swipeleft)="swipeLeft()"
+      (swiperight)="swipeRight()"
     >
       <div class="container mx-auto">
         <div class="pt-24 pb-10 px-4">
@@ -23,7 +27,10 @@
                     Discover fashion that suits to your style
                   </span>
                 </div>
-                <button (click)="selectSlide(index)" class="btn btn-primary">
+                <button
+                  class="btn btn-primary"
+                  [tabIndex]="index === selectSlideIndex ? 0 : -1"
+                >
                   Check this out
                 </button>
               </div>
@@ -42,16 +49,16 @@
       </div>
     </div>
   </div>
-  <div class="w-full bg-white">
+  <div class="category-section">
     <div class="container mx-auto">
       <div class="flex flex-col pt-6 pb-3 px-4">
         <div class="flex justify-between items-start pb-6">
-          <div
+          <button
             *ngFor="let category of categoryList; trackBy: trackByFn"
             class="category"
           >
             <span
-              class="rounded-lg bg-gray-100 h-9 w-9 flex justify-center items-center"
+              class="rounded-lg bg-gray-100 bg-opacity-30 h-9 w-9 flex justify-center items-center"
             >
               <app-sdk-icon
                 [icon]="category.icon"
@@ -59,7 +66,7 @@
               ></app-sdk-icon>
             </span>
             <span class="text-xs text-center">{{ category.title }}</span>
-          </div>
+          </button>
         </div>
         <div class="flex justify-center">
           <div class="indicators">

@@ -1,0 +1,30 @@
+<article>
+  <header>
+    <h2>Description</h2>
+  </header>
+  <div
+    class="w-full overflow-hidden text-gray-200 text-sm transition ease-in-out duration-300"
+    [class.h-6]="showLess"
+  >
+    <ul class="list-disc pl-5 pb-4">
+      <li *ngFor="let item of description" class="mb-1">
+        {{ item }}
+      </li>
+    </ul>
+    <span>
+      Chat us if there is anything you need to ask about the product :)
+    </span>
+  </div>
+  <div class="w-full mt-4">
+    <button class="btn btn-flat" (click)="toggleShow()">
+      <span class="flex flex-wrap items-center space-x-1">
+        <span class="text-green">See {{ showLess ? "more" : "less" }}</span>
+        <app-sdk-icon
+          icon="expand_less"
+          class="text-gray-200 transition ease-in-out duration-300 rotate-180"
+          [class.rotate-180]="showLess"
+        ></app-sdk-icon>
+      </span>
+    </button>
+  </div>
+</article>

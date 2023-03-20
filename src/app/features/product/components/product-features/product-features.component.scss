@@ -1,0 +1,11 @@
+.product-features {
+  @apply flex flex-wrap w-full justify-between;
+
+  > div {
+    @apply flex flex-col space-y-3;
+
+    &:first-child {
+      @apply pr-3;
+    }
+  }
+}

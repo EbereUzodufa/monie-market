@@ -2,21 +2,51 @@
   <div class="container mx-auto">
     <div class="w-full py-6 px-4">
       <div class="w-full flex justify-between items-center mb-4">
-        <span class="text-xl font-medium">Best Sale Product</span>
+        <h2 class="text-xl font-medium">{{ title }}</h2>
         <span class="text-base text-green font-medium">See more</span>
       </div>
-      <div class="grid grid-cols-2 gap-4">
-        <div
-          *ngFor="
-            let product of productList;
-            let index = index;
-            trackBy: trackByFn
-          "
-          class="flex-1"
-        >
-          <app-product-card [isEven]="(index + 1) % 2 === 0"></app-product-card>
-        </div>
-      </div>
+      <ng-container [ngSwitch]="display">
+        <ng-container *ngSwitchCase="'horizontal'">
+          <ng-container
+            *ngTemplateOutlet="horizontalDisplayTemplate"
+          ></ng-container>
+        </ng-container>
+        <ng-container *ngSwitchDefault>
+          <ng-container
+            *ngTemplateOutlet="verticalDisplayTemplate"
+          ></ng-container>
+        </ng-container>
+      </ng-container>
     </div>
   </div>
 </div>
+
+<ng-template #verticalDisplayTemplate>
+  <div class="vertical-display-section">
+    <ng-container
+      [ngTemplateOutlet]="productListTemplate"
+      [ngTemplateOutletContext]="{ $implicit: true }"
+    ></ng-container>
+  </div>
+</ng-template>
+
+<ng-template #horizontalDisplayTemplate>
+  <div class="horizontal-display-section">
+    <ng-container
+      [ngTemplateOutlet]="productListTemplate"
+      [ngTemplateOutletContext]="{ $implicit: false }"
+    ></ng-container>
+  </div>
+</ng-template>
+
+<ng-template #productListTemplate let-canShowEven>
+  <div
+    *ngFor="let product of productList; let index = index; trackBy: trackByFn"
+    class="product-item"
+  >
+    <app-product-card
+      [product]="product"
+      [isEven]="(index + 1) % 2 === 0 && canShowEven"
+    ></app-product-card>
+  </div>
+</ng-template>
