@@ -1,3 +1,89 @@
+@keyframes animate-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animate-slide {
+  0% {
+    opacity: 0;
+    transform: translate(0, 20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes animate-slide-extra {
+  0% {
+    opacity: 0;
+    transform: translate(0, 40%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes animate-slide-bottom {
+  0% {
+    opacity: 0;
+    transform: translate(0, 100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.animate {
+  animation-duration: 2s; //running slower to show effect
+  animation-fill-mode: backwards;
+
+  &.slide {
+    animation-name: animate-slide;
+
+    &-extra {
+      animation-name: animate-slide-extra;
+    }
+
+    &-bottom {
+      animation-name: animate-slide-bottom;
+    }
+  }
+
+  &.fade {
+    animation-name: animate-fade;
+    animation-timing-function: ease;
+  }
+
+  &.animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+  &.animation-delay-300 {
+    animation-delay: 0.3s;
+  }
+  &.animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+  &.animation-delay-500 {
+    animation-delay: 0.5s;
+  }
+  &.animation-delay-700 {
+    animation-delay: 0.7s;
+  }
+  &.animation-delay-800 {
+    animation-delay: 0.8s;
+  }
+  &.animation-delay-1000 {
+    animation-delay: 1s;
+  }
+}
+
 .nav-tab-button {
   @apply py-1 px-2 text-gray-200 border-b border-gray-200;
 

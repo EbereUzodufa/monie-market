@@ -1,12 +1,18 @@
 <ng-container *ngIf="product$ | async as product">
-  <app-product-detail-navbar></app-product-detail-navbar>
+  <app-product-detail-navbar
+    class="animate fade animation-delay-200"
+  ></app-product-detail-navbar>
   <div class="w-full pt-[5.7rem]">
-    <app-product-img-overview></app-product-img-overview>
+    <div class="w-full animate slide animation-delay-300">
+      <app-product-img-overview class=""></app-product-img-overview>
+    </div>
     <section class="w-full pb-24">
       <div class="container mx-auto">
         <div class="p-4">
           <div class="w-full">
-            <div class="flex flex-col space-y-3 pb-3">
+            <div
+              class="flex flex-col space-y-3 pb-3 animate slide animation-delay-700"
+            >
               <a
                 href=""
                 target="_blank"
@@ -48,7 +54,7 @@
                 </ul>
               </div>
             </div>
-            <div class="w-full">
+            <div class="w-full animate slide-bottom animation-delay-800">
               <div class="flex flex-row relative w-full">
                 <button class="nav-tab-button selected w-2/5">About</button>
                 <button class="nav-tab-button flex-1">Reviews</button>
@@ -57,6 +63,8 @@
                 ></div>
               </div>
             </div>
+          </div>
+          <div class="w-full animate slide-extra animation-delay-300">
             <app-product-features
               [features]="product.features"
             ></app-product-features>
@@ -79,5 +87,7 @@
       <app-product-list [display]="'horizontal'"></app-product-list>
     </section>
   </div>
-  <app-cart-overview></app-cart-overview>
+  <app-cart-overview
+    class="animate slide-bottom animation-delay-700"
+  ></app-cart-overview>
 </ng-container>
