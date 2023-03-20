@@ -1,7 +1,7 @@
 <div class="w-full">
   <div class="slider">
     <div
-      *ngFor="let item of bannerList; let index = index"
+      *ngFor="let bannerSlide of bannerList; let index = index"
       class="w-full slide bg{{ index }}"
       [ngClass]="{
         prev:
@@ -13,34 +13,63 @@
       (swipeleft)="swipeLeft()"
       (swiperight)="swipeRight()"
     >
-      <div class="container mx-auto">
-        <div class="pt-24 pb-10 px-4">
-          <div class="w-full">
-            <div class="flex justify-between items-start">
-              <div class="flex-1 pr-4 space-y-6">
-                <div class="flex flex-col">
-                  <span class="text-xs font-bold uppercase"
-                    >#Fashion Day {{ index }}</span
-                  >
-                  <span class="text-2xl font-bold uppercase">80% OFF</span>
-                  <span class="text-xs max-w-[11rem]">
-                    Discover fashion that suits to your style
-                  </span>
+      <div class="w-full h-full relative">
+        <picture *ngIf="bannerSlide.img as img">
+          <source [srcset]="img.webp" />
+          <img
+            appLazyLoadImage
+            class="slide-img"
+            [src]="img.fallback"
+            alt="{{ bannerSlide.tag }}"
+          />
+        </picture>
+        <div class="container mx-auto z-10">
+          <div class="pt-24 pb-10 px-4">
+            <div class="w-full">
+              <div class="flex justify-between items-start">
+                <div class="flex-1 pr-4 space-y-6">
+                  <div class="flex flex-col">
+                    <span class="text-xs font-bold uppercase">{{
+                      bannerSlide.tag
+                    }}</span>
+                    <span
+                      *ngIf="bannerSlide.title"
+                      class="text-2xl font-bold uppercase"
+                      >{{ bannerSlide.title }}</span
+                    >
+                    <span
+                      *ngIf="bannerSlide.subtitle"
+                      class="text-xl font-medium pt-1 max-w-[14rem]"
+                    >
+                      {{ bannerSlide.subtitle }}
+                    </span>
+                    <span
+                      *ngIf="bannerSlide.description"
+                      class="text-xs max-w-[11rem]"
+                    >
+                      {{ bannerSlide.description }}
+                    </span>
+                  </div>
+                  <div class="flex justify-start pt-6 mb-0 mt-auto">
+                    <button
+                      class="btn btn-primary"
+                      [tabIndex]="index === selectSlideIndex ? 0 : -1"
+                    >
+                      Check this out
+                    </button>
+                  </div>
                 </div>
-                <button
-                  class="btn btn-primary"
-                  [tabIndex]="index === selectSlideIndex ? 0 : -1"
-                >
-                  Check this out
-                </button>
-              </div>
-              <div class="flex flex-wrap">
-                <div class="indicators">
-                  <div
-                    *ngFor="let item of bannerList; let indicatorIndex = index"
-                    class="indicator"
-                    [class.active]="index === indicatorIndex"
-                  ></div>
+                <div class="flex flex-wrap">
+                  <div class="indicators">
+                    <div
+                      *ngFor="
+                        let item of bannerList;
+                        let indicatorIndex = index
+                      "
+                      class="indicator"
+                      [class.active]="index === indicatorIndex"
+                    ></div>
+                  </div>
                 </div>
               </div>
             </div>

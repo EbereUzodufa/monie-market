@@ -1,4 +1,4 @@
-<div class="w-full">
+<div *ngIf="product" class="w-full">
   <div class="container mx-auto">
     <div class="px-4">
       <div class="w-full bg-gray-100 rounded-lg">
@@ -6,19 +6,27 @@
           <div
             class="absolute top-0 left-0 flex flex-wrap flex-col p-4 space-y-4"
           >
-            <button *ngFor="let item of productImagList" class="h-9 w-9">
-              <img
-                class="w-full h-full rounded-lg object-cover object-top shadow-sm"
-                [src]="item"
-                alt="product image"
-              />
+            <button *ngFor="let item of product.otherImgsUrl" class="h-9 w-9">
+              <picture>
+                <source [srcset]="item.webp" />
+                <img
+                  appLazyLoadImage
+                  class="w-full h-full rounded-lg object-cover object-top shadow-sm"
+                  [src]="item.fallback"
+                  alt="product image"
+                />
+              </picture>
             </button>
           </div>
-          <img
-            class="product-selected-image"
-            src="https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg"
-            alt="product image"
-          />
+          <picture>
+            <source [srcset]="product.mainImgUrl.webp" />
+            <img
+              appLazyLoadImage
+              class="product-selected-image"
+              [src]="product.mainImgUrl.fallback"
+              alt="image of product {{ product.name }}"
+            />
+          </picture>
         </div>
       </div>
     </div>

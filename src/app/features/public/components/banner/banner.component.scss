@@ -32,18 +32,6 @@
   .slide {
     @apply absolute items-end top-0 right-0 bottom-0 h-full w-full transition ease-in-out duration-300 -translate-x-full hidden;
 
-    &.bg0 {
-      @apply bg-pink;
-    }
-
-    &.bg1 {
-      @apply bg-green;
-    }
-
-    &.bg2 {
-      @apply bg-[cadetblue];
-    }
-
     &.active {
       @apply translate-x-0 z-10 flex;
       // background: cadetblue;
@@ -58,11 +46,8 @@
     }
   }
 
-  // .slide.active + .slide {
-  //   @apply translate-x-full;
-
-  //   &:first-child {
-  //     @apply z-10;
-  //   }
-  // }
+  .slide-img {
+    @apply absolute top-0 left-0 w-full h-full object-cover object-left-bottom shadow-sm -z-[1];
+    aspect-ratio: 68/54;
+  }
 }

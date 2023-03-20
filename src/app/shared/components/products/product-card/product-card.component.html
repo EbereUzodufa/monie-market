@@ -1,13 +1,18 @@
 <div *ngIf="product">
   <button class="product-card" [routerLink]="[productRoute, product.id]">
     <div class="relative">
-      <img
-        class="product-img"
-        [ngClass]="{ 'rounded-tl-lg': isEven }"
-        [src]="product.mainImgUrl"
-        [alt]="product.name"
-        loading="lazy"
-      />
+      <picture>
+        <source [srcset]="product.mainImgUrl.webp" />
+        <img
+          class="product-img"
+          appLazyLoadImage
+          [ngClass]="{ 'rounded-tl-lg': isEven }"
+          [src]="product.mainImgUrl.fallback"
+          [alt]="product.name"
+          loading="lazy"
+        />
+      </picture>
+
       <div
         class="absolute top-0 right-0 flex flex-wrap z-30"
         (click)="toggleFavorite($event)"
