@@ -64,9 +64,18 @@
               let index = index;
               trackBy: trackByFn
             "
-            class="relative"
+            class="relative flex-1"
           >
-            <img class="reviews-img" [src]="imageUrl" alt="name" />
+            <picture>
+              <source [srcset]="imageUrl.webp" />
+              <img
+                appLazyLoadImage
+                class="reviews-img"
+                [src]="imageUrl.fallback"
+                alt="image review name"
+              />
+            </picture>
+
             <span
               *ngIf="index + 1 === imageReview.url.length"
               class="no-of-more-reviews"
@@ -99,6 +108,7 @@
       <div class="flex justify-between items-center">
         <div class="flex flex-wrap items-center">
           <img
+            appLazyLoadImage
             class="reviewer-img w-5 aspect-square object-cover object-top mr-3 rounded-full"
             [src]="reviewer.imgUrl"
             alt="image of a reviewer"

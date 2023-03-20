@@ -8,6 +8,7 @@ import { ProductListComponent } from './components/products/product-list/product
 import { SuptextMaskedCharactersDirective } from './directives/suptext-masked-characters.directive';
 import { ProductRatingComponent } from './components/products/product-rating/product-rating.component';
 import { ExternalLinksDirective } from './directives/external-links.directive';
+import { LazyLoadImageDirective } from './directives/lazy-load-image.directive';
 
 @NgModule({
   declarations: [
@@ -18,8 +19,9 @@ import { ExternalLinksDirective } from './directives/external-links.directive';
     SuptextMaskedCharactersDirective,
     ProductRatingComponent,
     ExternalLinksDirective,
+    LazyLoadImageDirective,
   ],
   imports: [CommonModule, RouterModule],
-  exports: [SdkIconComponent, SdkBadgeComponent, ProductListComponent, SuptextMaskedCharactersDirective, ProductRatingComponent],
+  exports: [SdkIconComponent, SdkBadgeComponent, ProductListComponent, SuptextMaskedCharactersDirective, ProductRatingComponent, LazyLoadImageDirective],
 })
 export class SharedModule {}

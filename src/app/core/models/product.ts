@@ -2,8 +2,8 @@ export interface IProduct {
   id: string;
   store: IStore;
   name: string;
-  mainImgUrl: string;
-  otherImgsUrl: string[];
+  mainImgUrl: IProductImage;
+  otherImgsUrl: IProductImage[];
   isFavorite: boolean;
   category: string;
   price: number;
@@ -36,7 +36,7 @@ export interface IProductReview {
   totalReviews: number;
   ratings: IRating;
   imageReview: {
-    url: string[];
+    url: IProductImage[];
     remaining: string;
   };
   topUserReviews: {
@@ -59,3 +59,16 @@ export interface IRatingInfo {
 type IRating = {
   [key: number]: IRatingInfo;
 };
+
+interface IProductImage {
+  webp: string;
+  fallback: string;
+}
+
+export interface IBanner {
+  tag?: string;
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  img: IProductImage;
+}
