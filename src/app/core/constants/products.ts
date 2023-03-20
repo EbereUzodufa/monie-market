@@ -1,5 +1,5 @@
 import { IProduct } from '../models/product';
-
+const baseProductURL = 'assets/images/products';
 export const PRODUCTS: IProduct[] = [
   {
     id: '1',
@@ -8,13 +8,27 @@ export const PRODUCTS: IProduct[] = [
       name: 'Thrifting Store',
     },
     name: "Essentials Men's short-sleeve crewneck T-shirt",
-    mainImgUrl:
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
+    mainImgUrl: {
+      webp: `${baseProductURL}/1.webp`,
+      fallback: `${baseProductURL}/1.jpg`,
+    },
     otherImgsUrl: [
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
+      {
+        webp: `${baseProductURL}/11.webp`,
+        fallback: `${baseProductURL}/11.jpg`,
+      },
+      {
+        webp: `${baseProductURL}/12.webp`,
+        fallback: `${baseProductURL}/12.jpg`,
+      },
+      {
+        webp: `${baseProductURL}/13.webp`,
+        fallback: `${baseProductURL}/13.jpg`,
+      },
+      {
+        webp: `${baseProductURL}/14.webp`,
+        fallback: `${baseProductURL}/14.jpg`,
+      },
     ],
     isFavorite: false,
     category: 'shirt',
@@ -70,10 +84,22 @@ export const PRODUCTS: IProduct[] = [
       },
       imageReview: {
         url: [
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
+          {
+            webp: `${baseProductURL}/15.jpg`,
+            fallback: `${baseProductURL}/15.jpg`,
+          },
+          {
+            webp: `${baseProductURL}/14.webp`,
+            fallback: `${baseProductURL}/14.jpg`,
+          },
+          {
+            webp: `${baseProductURL}/12.webp`,
+            fallback: `${baseProductURL}/12.jpg`,
+          },
+          {
+            webp: `${baseProductURL}/8.jpg`,
+            fallback: `${baseProductURL}/8.jpg`,
+          },
         ],
         remaining: '132+',
       },
@@ -118,13 +144,27 @@ export const PRODUCTS: IProduct[] = [
       name: 'Thrifting Store',
     },
     name: "Essentials Men's short-sleeve crewneck T-shirt",
-    mainImgUrl:
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
+    mainImgUrl: {
+      webp: `${baseProductURL}/2.webp`,
+      fallback: `${baseProductURL}/2.jpg`,
+    },
     otherImgsUrl: [
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
+      {
+        webp: `${baseProductURL}/11.webp`,
+        fallback: `${baseProductURL}/11.jpg`,
+      },
+      {
+        webp: `${baseProductURL}/12.webp`,
+        fallback: `${baseProductURL}/12.jpg`,
+      },
+      {
+        webp: `${baseProductURL}/13.webp`,
+        fallback: `${baseProductURL}/13.jpg`,
+      },
+      {
+        webp: `${baseProductURL}/14.webp`,
+        fallback: `${baseProductURL}/14.jpg`,
+      },
     ],
     isFavorite: true,
     category: 'shirt',
@@ -180,10 +220,22 @@ export const PRODUCTS: IProduct[] = [
       },
       imageReview: {
         url: [
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
+          {
+            webp: `${baseProductURL}/15.jpg`,
+            fallback: `${baseProductURL}/15.jpg`,
+          },
+          {
+            webp: `${baseProductURL}/14.webp`,
+            fallback: `${baseProductURL}/14.jpg`,
+          },
+          {
+            webp: `${baseProductURL}/12.webp`,
+            fallback: `${baseProductURL}/12.jpg`,
+          },
+          {
+            webp: `${baseProductURL}/8.jpg`,
+            fallback: `${baseProductURL}/8.jpg`,
+          },
         ],
         remaining: '132+',
       },
@@ -228,13 +280,27 @@ export const PRODUCTS: IProduct[] = [
       name: 'Thrifting Store',
     },
     name: "Essentials Men's short-sleeve crewneck T-shirt",
-    mainImgUrl:
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
+    mainImgUrl: {
+      webp: `${baseProductURL}/3.webp`,
+      fallback: `${baseProductURL}/3.jpg`,
+    },
     otherImgsUrl: [
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
+      {
+        webp: `${baseProductURL}/11.webp`,
+        fallback: `${baseProductURL}/11.jpg`,
+      },
+      {
+        webp: `${baseProductURL}/12.webp`,
+        fallback: `${baseProductURL}/12.jpg`,
+      },
+      {
+        webp: `${baseProductURL}/13.webp`,
+        fallback: `${baseProductURL}/13.jpg`,
+      },
+      {
+        webp: `${baseProductURL}/14.webp`,
+        fallback: `${baseProductURL}/14.jpg`,
+      },
     ],
     isFavorite: false,
     category: 'shirt',
@@ -290,10 +356,22 @@ export const PRODUCTS: IProduct[] = [
       },
       imageReview: {
         url: [
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
+          {
+            webp: `${baseProductURL}/15.jpg`,
+            fallback: `${baseProductURL}/15.jpg`,
+          },
+          {
+            webp: `${baseProductURL}/14.webp`,
+            fallback: `${baseProductURL}/14.jpg`,
+          },
+          {
+            webp: `${baseProductURL}/12.webp`,
+            fallback: `${baseProductURL}/12.jpg`,
+          },
+          {
+            webp: `${baseProductURL}/8.jpg`,
+            fallback: `${baseProductURL}/8.jpg`,
+          },
         ],
         remaining: '132+',
       },
@@ -338,13 +416,27 @@ export const PRODUCTS: IProduct[] = [
       name: 'Thrifting Store',
     },
     name: "Essentials Men's regular-fit long-sleeve oxford crewneck T-shirt",
-    mainImgUrl:
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
+    mainImgUrl: {
+      webp: `${baseProductURL}/4.webp`,
+      fallback: `${baseProductURL}/4.jpg`,
+    },
     otherImgsUrl: [
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
+      {
+        webp: `${baseProductURL}/11.webp`,
+        fallback: `${baseProductURL}/11.jpg`,
+      },
+      {
+        webp: `${baseProductURL}/12.webp`,
+        fallback: `${baseProductURL}/12.jpg`,
+      },
+      {
+        webp: `${baseProductURL}/13.webp`,
+        fallback: `${baseProductURL}/13.jpg`,
+      },
+      {
+        webp: `${baseProductURL}/14.webp`,
+        fallback: `${baseProductURL}/14.jpg`,
+      },
     ],
     isFavorite: false,
     category: 'shirt',
@@ -400,10 +492,22 @@ export const PRODUCTS: IProduct[] = [
       },
       imageReview: {
         url: [
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
+          {
+            webp: `${baseProductURL}/15.jpg`,
+            fallback: `${baseProductURL}/15.jpg`,
+          },
+          {
+            webp: `${baseProductURL}/14.webp`,
+            fallback: `${baseProductURL}/14.jpg`,
+          },
+          {
+            webp: `${baseProductURL}/12.webp`,
+            fallback: `${baseProductURL}/12.jpg`,
+          },
+          {
+            webp: `${baseProductURL}/8.jpg`,
+            fallback: `${baseProductURL}/8.jpg`,
+          },
         ],
         remaining: '132+',
       },
@@ -448,13 +552,27 @@ export const PRODUCTS: IProduct[] = [
       name: 'Thrifting Store',
     },
     name: "Essentials Men's short-sleeve crewneck T-shirt",
-    mainImgUrl:
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
+    mainImgUrl: {
+      webp: `${baseProductURL}/5.webp`,
+      fallback: `${baseProductURL}/5.jpg`,
+    },
     otherImgsUrl: [
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
+      {
+        webp: `${baseProductURL}/11.webp`,
+        fallback: `${baseProductURL}/11.jpg`,
+      },
+      {
+        webp: `${baseProductURL}/12.webp`,
+        fallback: `${baseProductURL}/12.jpg`,
+      },
+      {
+        webp: `${baseProductURL}/13.webp`,
+        fallback: `${baseProductURL}/13.jpg`,
+      },
+      {
+        webp: `${baseProductURL}/14.webp`,
+        fallback: `${baseProductURL}/14.jpg`,
+      },
     ],
     isFavorite: false,
     category: 'shirt',
@@ -510,10 +628,22 @@ export const PRODUCTS: IProduct[] = [
       },
       imageReview: {
         url: [
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
+          {
+            webp: `${baseProductURL}/15.jpg`,
+            fallback: `${baseProductURL}/15.jpg`,
+          },
+          {
+            webp: `${baseProductURL}/14.webp`,
+            fallback: `${baseProductURL}/14.jpg`,
+          },
+          {
+            webp: `${baseProductURL}/12.webp`,
+            fallback: `${baseProductURL}/12.jpg`,
+          },
+          {
+            webp: `${baseProductURL}/8.jpg`,
+            fallback: `${baseProductURL}/8.jpg`,
+          },
         ],
         remaining: '132+',
       },
@@ -558,13 +688,27 @@ export const PRODUCTS: IProduct[] = [
       name: 'Thrifting Store',
     },
     name: "Essentials Men's short-sleeve crewneck T-shirt",
-    mainImgUrl:
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
+    mainImgUrl: {
+      webp: `${baseProductURL}/6.webp`,
+      fallback: `${baseProductURL}/6.jpg`,
+    },
     otherImgsUrl: [
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
+      {
+        webp: `${baseProductURL}/11.webp`,
+        fallback: `${baseProductURL}/11.jpg`,
+      },
+      {
+        webp: `${baseProductURL}/12.webp`,
+        fallback: `${baseProductURL}/12.jpg`,
+      },
+      {
+        webp: `${baseProductURL}/13.webp`,
+        fallback: `${baseProductURL}/13.jpg`,
+      },
+      {
+        webp: `${baseProductURL}/14.webp`,
+        fallback: `${baseProductURL}/14.jpg`,
+      },
     ],
     isFavorite: false,
     category: 'shirt',
@@ -620,10 +764,22 @@ export const PRODUCTS: IProduct[] = [
       },
       imageReview: {
         url: [
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
+          {
+            webp: `${baseProductURL}/15.jpg`,
+            fallback: `${baseProductURL}/15.jpg`,
+          },
+          {
+            webp: `${baseProductURL}/14.webp`,
+            fallback: `${baseProductURL}/14.jpg`,
+          },
+          {
+            webp: `${baseProductURL}/12.webp`,
+            fallback: `${baseProductURL}/12.jpg`,
+          },
+          {
+            webp: `${baseProductURL}/8.jpg`,
+            fallback: `${baseProductURL}/8.jpg`,
+          },
         ],
         remaining: '132+',
       },
@@ -668,13 +824,27 @@ export const PRODUCTS: IProduct[] = [
       name: 'Thrifting Store',
     },
     name: "Essentials Men's short-sleeve crewneck T-shirt",
-    mainImgUrl:
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
+    mainImgUrl: {
+      webp: `${baseProductURL}/7.webp`,
+      fallback: `${baseProductURL}/7.jpg`,
+    },
     otherImgsUrl: [
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
+      {
+        webp: `${baseProductURL}/11.webp`,
+        fallback: `${baseProductURL}/11.jpg`,
+      },
+      {
+        webp: `${baseProductURL}/12.webp`,
+        fallback: `${baseProductURL}/12.jpg`,
+      },
+      {
+        webp: `${baseProductURL}/13.webp`,
+        fallback: `${baseProductURL}/13.jpg`,
+      },
+      {
+        webp: `${baseProductURL}/14.webp`,
+        fallback: `${baseProductURL}/14.jpg`,
+      },
     ],
     isFavorite: false,
     category: 'shirt',
@@ -730,10 +900,22 @@ export const PRODUCTS: IProduct[] = [
       },
       imageReview: {
         url: [
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
+          {
+            webp: `${baseProductURL}/15.jpg`,
+            fallback: `${baseProductURL}/15.jpg`,
+          },
+          {
+            webp: `${baseProductURL}/14.webp`,
+            fallback: `${baseProductURL}/14.jpg`,
+          },
+          {
+            webp: `${baseProductURL}/12.webp`,
+            fallback: `${baseProductURL}/12.jpg`,
+          },
+          {
+            webp: `${baseProductURL}/8.jpg`,
+            fallback: `${baseProductURL}/8.jpg`,
+          },
         ],
         remaining: '132+',
       },
@@ -778,13 +960,27 @@ export const PRODUCTS: IProduct[] = [
       name: 'Thrifting Store',
     },
     name: "Essentials Men's short-sleeve crewneck T-shirt",
-    mainImgUrl:
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
+    mainImgUrl: {
+      webp: `${baseProductURL}/8.webp`,
+      fallback: `${baseProductURL}/8.jpg`,
+    },
     otherImgsUrl: [
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-      'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
+      {
+        webp: `${baseProductURL}/11.webp`,
+        fallback: `${baseProductURL}/11.jpg`,
+      },
+      {
+        webp: `${baseProductURL}/12.webp`,
+        fallback: `${baseProductURL}/12.jpg`,
+      },
+      {
+        webp: `${baseProductURL}/13.webp`,
+        fallback: `${baseProductURL}/13.jpg`,
+      },
+      {
+        webp: `${baseProductURL}/14.webp`,
+        fallback: `${baseProductURL}/14.jpg`,
+      },
     ],
     isFavorite: false,
     category: 'shirt',
@@ -840,10 +1036,22 @@ export const PRODUCTS: IProduct[] = [
       },
       imageReview: {
         url: [
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
-          'https://ih1.redbubble.net/image.755961974.7153/ssrco,slim_fit_t_shirt,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000-bg,f8f8f8.jpg',
+          {
+            webp: `${baseProductURL}/15.jpg`,
+            fallback: `${baseProductURL}/15.jpg`,
+          },
+          {
+            webp: `${baseProductURL}/14.webp`,
+            fallback: `${baseProductURL}/14.jpg`,
+          },
+          {
+            webp: `${baseProductURL}/12.webp`,
+            fallback: `${baseProductURL}/12.jpg`,
+          },
+          {
+            webp: `${baseProductURL}/8.jpg`,
+            fallback: `${baseProductURL}/8.jpg`,
+          },
         ],
         remaining: '132+',
       },
