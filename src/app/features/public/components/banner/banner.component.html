@@ -4,12 +4,14 @@
       *ngFor="let item of bannerList; let index = index"
       class="w-full slide bg{{ index }}"
       [ngClass]="{
-        prev: index === selectSlideIndex - 1,
+        prev:
+          index === selectSlideIndex - 1 ||
+          (index === 0 && selectSlideIndex + 1 === bannerList.length),
         active: index === selectSlideIndex,
         next: index === selectSlideIndex + 1
       }"
-      (swipeleft)="swipeLeft($event)"
-      (swiperight)="swipeRight($event)"
+      (swipeleft)="swipeLeft()"
+      (swiperight)="swipeRight()"
     >
       <div class="container mx-auto">
         <div class="pt-24 pb-10 px-4">

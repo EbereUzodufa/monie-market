@@ -1,3 +1,4 @@
+import { IProduct } from './../../../../core/models/product';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -6,7 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent {
-  @Input() productList = Array(8).fill(0);
+  @Input() title = '';
+  @Input() productList: IProduct[] = [];
   @Input() display: 'horizontal' | 'vertical' = 'vertical';
 
   trackByFn(index: number) {

@@ -1,9 +1,7 @@
+import { Component, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { catchError, map, of, switchMap } from 'rxjs';
 import { ProductService } from './../../../../core/services/product.service';
-import { KeyValue } from '@angular/common';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { A_PRODUCT } from './../../../../core/constants/products';
-import { IProduct, IRatingInfo } from './../../../../core/models/product';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product-detail',
@@ -11,18 +9,22 @@ import { Observable } from 'rxjs';
   styleUrls: ['./product-detail.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class ProductDetailComponent implements OnInit {
-  product$: Observable<IProduct> = this.productService.selectedProduct();
+export class ProductDetailComponent {
+  constructor(
+    private productService: ProductService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
-  constructor(private productService: ProductService) {}
-
-  ngOnInit(): void {}
-
-  trackByFn(index: number) {
-    return index;
-  }
-
-  originalOrder() {
-    return 0;
-  }
+  product$ = this.route.params.pipe(
+    map((param) => param['id']),
+    map((id) => this.productService.setSelectedProduct(id)),
+    switchMap(() => this.productService.selectedProduct()),
+    catchError(() => {
+      alert('Ooops! Product not found or unavailible at the moment');
+      this.router.navigate(['/']);
+      return of(null);
+    })
+  );
+  recommendedProducts$ = this.productService.recommendedHomeProducts();
 }

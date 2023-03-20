@@ -7,8 +7,13 @@
       <div class="min-w-fit py-1 pl-4">
         <div class="flex justify-end">
           <div class="flex flex-wrap space-x-3">
-            <button class="btn btn-menu">
-              <app-sdk-icon icon="favorite" class="nav-icon"></app-sdk-icon>
+            <button (click)="toggleFavorite()" class="btn btn-menu">
+              <app-sdk-icon
+                [ngClass]="{ 'text-pink': product.isFavorite }"
+                [isFilled]="product.isFavorite"
+                icon="favorite"
+                class="nav-icon"
+              ></app-sdk-icon>
             </button>
             <button class="btn btn-menu">
               <app-sdk-icon icon="share" class="nav-icon"></app-sdk-icon>

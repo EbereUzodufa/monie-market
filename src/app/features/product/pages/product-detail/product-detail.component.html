@@ -1,5 +1,6 @@
 <ng-container *ngIf="product$ | async as product">
   <app-product-detail-navbar
+    [product]="product"
     class="animate fade animation-delay-200"
   ></app-product-detail-navbar>
   <div class="w-full pt-[5.7rem]">
@@ -19,7 +20,7 @@
                 class="product-store flex justify-start items-center space-x-2 text-gray-200"
               >
                 <app-sdk-icon icon="storefront"></app-sdk-icon>
-                <span>{{ product.store.username }}</span>
+                <h1>{{ product.store.username }}</h1>
               </a>
               <p class="text-xl font-semibold capitalize text-black pt-3">
                 {{ product.name }}
@@ -84,7 +85,12 @@
           </div>
         </div>
       </div>
-      <app-product-list [display]="'horizontal'"></app-product-list>
+      <app-product-list
+        *ngIf="recommendedProducts$ | async as recommendedProducts"
+        [productList]="recommendedProducts"
+        title="Recommendation"
+        [display]="'horizontal'"
+      ></app-product-list>
     </section>
   </div>
   <app-cart-overview
